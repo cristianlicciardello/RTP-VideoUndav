@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Aplicaciones en Internet</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script type="text/javascript" src="webrtcclient.js"></script>
+  <script type="text/javascript" src="controller.js"></script>
+  <script src="adapter.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="undav.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          VideoUNDAV
+        </a>
+
+        <div id="panelconectar" class="d-flex" role="search">
+          <input id="txtNombre" class="form-control me-2" type="text" placeholder="Nombre" aria-label="Nombre" maxlength="30" required autocomplete="Nombre" inputmode="verbatim">
+          <input id="butconectar" class="btn btn-success" type="button" name="conectar" value="Conectar" >
+        </div>
+        <div id="paneldesconectar" class="d-flex" role="search" style="visibility:hidden">
+          <input id="butdesconectar" class="btn btn-danger" type="button" name="desconectar" value="Desconectar" >
+        </div>
+      </div>
+    </nav>
+
+    <div id="panel" style="visibility:hidden">
+      <div class="row">
+        <div class="col col-md-8">  
+          <div class="card">
+            <video id="received_video" autoplay ></video>
+            <div class="card-body">
+              <h5 id='etiquetaNombreRemoto' class="card-title">Remoto</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div class="card">
+            <video id="local_video" autoplay muted></video>
+            <div class="card-body">
+              <h5 id='etiquetaNombreLocal' class="card-title">Local</h5>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</body>
+</html>
